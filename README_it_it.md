@@ -5,9 +5,9 @@ twarc
 
 *Translations: [Italian], [Japanese], [Portuguese], [Spanish], [Swahili], [Swedish]*
 
-`twarc` è un tool di prompt dei comandi e una libraria Python per archiviare i <Twitter JSON data>.
-Ogni tweet è rappresentato da un oggetto JSON che è [esattamente](https://dev.twitter.com/overview/api/tweets) come restituito delle Twitter API.
-I Tweets sono salvati come singole [line-oriented JSON](https://en.wikipedia.org/wiki/JSON_Streaming#Line-delimited_JSON). `twarc` gestisce automaticamente i limiti delle Twitter API's, definiti in [rate limits](https://dev.twitter.com/rest/public/rate-limiting). In aggiunta ai Tweets, `twarc` può essere usato per archiviare anche altri oggetti di Twitter tra cui anche gli utenti, i trends e rigenerare Tweets partendo dai TWeet ids.
+`twarc` è un tool di prompt dei comandi e una libraria Python per archiviare i Tweets nel formato JSON di Twitter.
+Ogni tweet è rappresentato da un oggetto JSON, che è [esattamente](https://dev.twitter.com/overview/api/tweets) come restituito delle Twitter API.
+I Tweets sono salvati come singole righe di [line-oriented JSON](https://en.wikipedia.org/wiki/JSON_Streaming#Line-delimited_JSON). I limiti delle Twitter API sono gestisce automaticamente da `twarc`, definiti come [rate limits](https://dev.twitter.com/rest/public/rate-limiting). In aggiunta ai Tweets, `twarc` può essere usato per archiviare anche altri oggetti di Twitter tra cui anche gli utenti, i trends e rigenerare Tweets partendo dai TWeet ids.
 
 `Twarc` è stato sviluppato come parte del progetto [Documenting the Now](http://www.docnow.io), progetto sponsorizzato dalla [Mellon Foundation](https://mellon.org/).
 
@@ -50,7 +50,7 @@ Una volta in possesso delle chiavi delle applicazioni potete configurare `twarc`
 
     twarc configure
 
-Le credenzioali inserite saranno salvate in un file chiamato `.twarc` nella vostra home directory in modo permanente, e non doverle inserire nei successivi usi di `twar`. In alternativa alla configurazione potete sia impostare delle variabili di ambiente (`CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`) che utilizzare le opzioni di linea comando (`--consumer_key`, `--consumer_secret`, `--access_token`, `--access_token_secret`).
+Le credenziali inserite saranno salvate in un file chiamato `.twarc` nella vostra home directory in modo permanente, e non doverle inserire nei successivi usi di `twar`. In alternativa alla configurazione potete sia impostare delle variabili di ambiente (`CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`) che utilizzare le opzioni di linea comando (`--consumer_key`, `--consumer_secret`, `--access_token`, `--access_token_secret`).
 
 ### Search
 
