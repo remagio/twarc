@@ -3,33 +3,24 @@ twarc
 
 [![Build Status](https://secure.travis-ci.org/DocNow/twarc.png)](http://travis-ci.org/DocNow/twarc)
 
-*Translations: [Japanese], [Portuguese], [Spanish], [Swahili], [Swedish]*
+*Translations: [Italian], [Japanese], [Portuguese], [Spanish], [Swahili], [Swedish]*
 
-twarc is a command line tool and Python library for archiving Twitter JSON data.
-Each tweet is represented as a JSON object that is
-[exactly](https://dev.twitter.com/overview/api/tweets) what was returned from
-the Twitter API.  Tweets are stored as [line-oriented JSON](https://en.wikipedia.org/wiki/JSON_Streaming#Line-delimited_JSON).  Twarc will handle
-Twitter API's [rate limits](https://dev.twitter.com/rest/public/rate-limiting)
-for you. In addition to letting you collect tweets Twarc can also help you
-collect users, trends and hydrate tweet ids.
+`twarc` è un tool di prompt dei comandi e una libraria Python per archiviare i <Twitter JSON data>.
+Ogni tweet è rappresentato da un oggetto JSON che è [esattamente](https://dev.twitter.com/overview/api/tweets) come restituito delle Twitter API.
+I Tweets sono salvati come singole [line-oriented JSON](https://en.wikipedia.org/wiki/JSON_Streaming#Line-delimited_JSON). `twarc` gestisce automaticamente i limiti delle Twitter API's, definiti in [rate limits](https://dev.twitter.com/rest/public/rate-limiting). In aggiunta ai Tweets, `twarc` può essere usato per archiviare anche altri oggetti di Twitter tra cui anche gli utenti, i trends e rigenerare Tweets partendo dai TWeet ids.
 
-twarc was developed as part of the [Documenting the Now](http://www.docnow.io)
-project which was funded by the [Mellon Foundation](https://mellon.org/).
+`Twarc` è stato sviluppato come parte del progetto [Documenting the Now](http://www.docnow.io), progetto sponsorizzato dalla [Mellon Foundation](https://mellon.org/).
 
 ## Install
 
-Before using twarc you will need to register an application at
-[apps.twitter.com](http://apps.twitter.com). Once you've created your
-application, note down the consumer key, consumer secret and then click to
-generate an access token and access token secret. With these four variables
-in hand you are ready to start using twarc.
+Prima di utilizzare `twarc` è necessario registrare una applicazione su [apps.twitter.com](http://apps.twitter.com). Una volta finita la registrazione, prendere nota della "consumer key" e del "consumer secret". Successivamente premete il bottone per generare l'"access token" e l'"access token secret" e prendetene nota. Con queste quattro varaibili sarete pronti per iniziare ad usare `twarc`.
 
-1. install [Python](http://python.org/download) (2 or 3)
-2. [pip](https://pip.pypa.io/en/stable/installing/) install twarc
+1. installare [Python](http://python.org/download) (2 or 3), se non presente sul vostro computer.
+2. Per installare twarc: [pip](https://pip.pypa.io/en/stable/installing/) install twarc
 
-### Homebrew (macOS only)
+### Homebrew (solo per macOS)
 
-For macOS users, you can install `twarc` via:
+Per gli utenti macOS, è possibile installare `twarc` via:
 
 ```bash
 $ brew install twarc
@@ -37,36 +28,29 @@ $ brew install twarc
 
 ## Quickstart:
 
-First you're going to need to tell twarc about your application API keys and
-grant access to one or more Twitter accounts:
+Il primo passo e configurare `twarc` con le API key della applicazione che avete precedentemente registrato, per poter accedere tramite alle Twitter API tramite l'account Twitter associato. E' possibile configure multiple API keys, associate a più accounts:
 
     twarc configure
 
-Then try out a search:
+Ora potete provare una ricerca:
 
     twarc search blacklivesmatter > search.jsonl
 
-Or maybe you'd like to collect tweets as they happen?
+Oppure potete provare a collezionare Tweets dallo stream di Twitter in tempo reale:
 
     twarc filter blacklivesmatter > stream.jsonl
 
-See below for the details about these commands and more.
+Consultate i prossimi paragrafi per maggiori informazioni di questi comandi e dei parametri disponibili.
 
-## Usage
+## Utilizzo
 
 ### Configure
 
-Once you've got your application keys you can tell twarc what they are with the
-`configure` command.
+Una volta in possesso delle chiavi delle applicazioni potete configurare `twarc` con il comando `configure`:
 
     twarc configure
 
-This will store your credentials in a file called `.twarc` in your home
-directory so you don't have to keep entering them in. If you would rather supply
-them directly you can set them in the environment (`CONSUMER_KEY`,
-`CONSUMER_SECRET`, `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`) or using command line
-options (`--consumer_key`, `--consumer_secret`, `--access_token`,
-`--access_token_secret`).
+Le credenzioali inserite saranno salvate in un file chiamato `.twarc` nella vostra home directory in modo permanente, e non doverle inserire nei successivi usi di `twar`. In alternativa alla configurazione potete sia impostare delle variabili di ambiente (`CONSUMER_KEY`, `CONSUMER_SECRET`, `ACCESS_TOKEN`, `ACCESS_TOKEN_SECRET`) che utilizzare le opzioni di linea comando (`--consumer_key`, `--consumer_secret`, `--access_token`, `--access_token_secret`).
 
 ### Search
 
@@ -436,6 +420,8 @@ Each script can also generate an html demo of a D3 visualization, e.g.
 [timelines](https://wallandbinkley.com/twarc/bill10/) or a
 [directed graph of retweets](https://wallandbinkley.com/twarc/bill10/directed-retweets.html).
 
+
+[Italian]: https://github.com/DocNow/twarc/blob/master/README_it_it.md
 [Japanese]: https://github.com/DocNow/twarc/blob/master/README_ja_jp.md
 [Portuguese]: https://github.com/DocNow/twarc/blob/master/README_pt_br.md
 [Spanish]: https://github.com/DocNow/twarc/blob/master/README_es_mx.md
